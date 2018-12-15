@@ -38,10 +38,14 @@ events.register('footer-not-in-view', fn);
 ViewportNotifier
 ```
 
-`el` - an element that requires viewport notification
-`scroller` - an instance of the `Scroller` class.
 
 The contructor accepts an `options` object with two properties, the 'el' - that is, the element - and an instance of the `Scroller` class, which just emits an event on the `window` `onscroll` event. 
+
+
+`el` - an element that requires viewport notification
+
+`scroller` - an instance of the `Scroller` class.
+
 
 ### Event Documentation
 
