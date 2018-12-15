@@ -6,7 +6,7 @@ An IE-friendly alternative to the `InteractionObserverAPI` - receive an event no
 
 @todo threshold
 
-This is an `es6` compatible version of an earlier library, hosted (here)[https://bitbucket.org/matthewjaestokeley/js-interactions/src/master/]
+This is an `es6` compatible version of an earlier library, hosted [here](https://bitbucket.org/matthewjaestokeley/js-interactions/src/master/)
 
 ### Example
 
