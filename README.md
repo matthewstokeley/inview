@@ -4,30 +4,36 @@
 
 An IE-friendly alternative to the `InteractionObserverAPI` - receive an event notification if an element enters into the viewport.
 
-@todo threshold
+### Dependencies
 
-This is an `es6` compatible version of an earlier library, hosted [here](https://bitbucket.org/matthewjaestokeley/js-interactions/src/master/)
+- `Scroller`
+
+A simple class for handling `onscroll` events.
+
+- `events`
+
+An object that implements the `pubsub` method. 
 
 ### Example
 
 ```
 
-<section id="footer">
-    footer
-</section>
+<footer id="footer">
+    ...
+</footer>
 
 ...
 
-var notifier = new ViewportNotifier(
-	{
-		el: document.querySelector('#footer'),
-		scroller: new Scroller()
-	});
+var notifier = new ViewportNotifier({
+    el: document.querySelector('#footer'),
+    scroller: new Scroller()
+});
+
+var fn = (res) => { console.log(res) }
 
 // register events
 events.register('footer-in-view', fn);
 events.register('footer-not-in-view', fn);
-
 
 ```
 
@@ -38,13 +44,12 @@ events.register('footer-not-in-view', fn);
 ViewportNotifier
 ```
 
-
-The contructor accepts an `options` object with two properties, the 'el' - that is, the element - and an instance of the `Scroller` class, which just emits an event on the `window` `onscroll` event. 
+The constructor accepts an `options` object with two properties, `el` and an instance of the `Scroller` class, which just emits an event on the `window` `onscroll` event and provides the option to include methods for debouncing scroll events. 
 
 
 `el` - an element that requires viewport notification
 
-`scroller` - an instance of the `Scroller` class.
+`scroller` - an instance of the `Scroller` class. 
 
 
 ### Event Documentation
@@ -55,7 +60,7 @@ Two events are emitted.
 #{section}-in-view
 ```
 
-The section `id` plus the string `-in-view` is emitted with a response of type `boolean` indicating if the `el` is in view.
+When the section enters the viewport, the section `id` plus the string `-in-view` is emitted.
 
 ---
 
@@ -64,6 +69,5 @@ The section `id` plus the string `-in-view` is emitted with a response of type `
 #{section}-not-inview;
 ```
 
-The section `id` plus the string `-not-in-view` is emitted with a response of type `boolean` indicating if the `el` is in view.
+When the section leaves the viewport, the section `id` plus the string `-not-in-view` is emitted.
 
-```
