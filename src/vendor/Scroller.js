@@ -3,39 +3,48 @@
 export default class Scroller {
 
   constructor() {
-      this.init().listen();    
+    
+      this.init().listen(); 
+    
   }
 
 
   /**
-   * [init description]
-   * @return {[type]} [description]
+   * @chainable
+   * @return {Object}
    */
   init() {
+    
       this.isScroller = false;
       this.pos = 0;
       return this;
+    
   };
 
   /**
-   * [listen description]
-   * @return {[type]} [description]
+   * @todo debounce or throttle
+   * @return {NULL}
    */
   listen() {
-      window.addEventListener('scroll', function(e) {
+      window.addEventListener( 'scroll', function( e ) {
           this.pos = window.scrollY;
           this.emit();
-      }.bind(this));
-      return this;
+        
+      }.bind( this ) );
+    
+    return null
+      
   };
 
   /**
-   * [requestTick description]
-   * @return {[type]} [description]
+   * 
+   * @return {NULL}
    */
   emit() {
-  
+    
       events.emit('scroll', null, this.pos);
+    
+      return null
   
   }
 
