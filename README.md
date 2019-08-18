@@ -54,7 +54,7 @@ The constructor accepts an `options` object with two properties, `el` and an ins
 
 ### Event Documentation
 
-Two events are emitted.
+Two events are emitted. @todo wonky payload.
 
 ```
 #{section}-in-view
