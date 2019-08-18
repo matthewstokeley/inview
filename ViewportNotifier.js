@@ -4,19 +4,19 @@ export default class ViewportNotifier {
 
     constructor(options) {
         /**
-         * [section description]
+         * 
          * @type {Element]}
          */
         this.el = options.el;
 
         /**
-         * [scroller description]
+         * 
          * @type {Object}
          */
         this.scroller = options.scroller;
 
         /**
-         * [id description]
+         * 
          * @type {String}
          */
         this.id = this.section.id;
@@ -30,8 +30,8 @@ export default class ViewportNotifier {
 
 
     /**
-     * [init description]
-     * @return {[type]} [description]
+     * @chainable
+     * @return {Object}
      */
     init() {
 
@@ -53,8 +53,9 @@ export default class ViewportNotifier {
     };
 
     /**
-     * [listen description]
-     * @return {[type]} [description]
+     * 
+     * @chainable
+     * @return {Object}
      */
     listen() {
 
@@ -72,18 +73,18 @@ export default class ViewportNotifier {
 
 
     /**
-     * [getId description]
-     * @return {String} [description]
+     * 
+     * @return {String|Number}
      */
     getId() {
       return this.id;
     }
 
     /**
-     * [findView description]
+     * 
      * @chainable
-     * @param  {Int} pos [description]
-     * @return {Object}     [description]
+     * @param  {Number}      position
+     * @return {Object}
      */
     findView(pos) {
 
@@ -101,26 +102,29 @@ export default class ViewportNotifier {
 
 
     /**
-     * [elIsInView description]
-     * @return {[type]} [description]
+     *  @return {null}
      */
     elIsInView() {
       
           events.emit(this.id + '-inview', null, true);
           this.isInView = true; 
+         
+          return null;
       
 
     };
 
     /*
-     * [elIsNotInView description]
-     * @return {[type]} [description]
+     * 
+     * @return {null}
      */
     elIsNotInView() { 
 
 
         events.emit(this.id + '-not-inview', null, false);
         this.isInView = false;
+
+        return null;
 
     };
 
