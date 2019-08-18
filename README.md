@@ -12,7 +12,7 @@ A simple class for handling `onscroll` events.
 
 - `events`
 
-An object that implements the `pubsub` method. 
+An object that implements a `pubsub` pattern. 
 
 ### Example
 
