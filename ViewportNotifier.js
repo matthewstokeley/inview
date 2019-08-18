@@ -36,11 +36,11 @@ export default class ViewportNotifier {
     init() {
 
         this.viewport = {
-          "w": Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
-          "h": Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+          "w": Math.max( document.documentElement.clientWidth, window.innerWidth || 0 ),
+          "h": Math.max( document.documentElement.clientHeight, window.innerHeight || 0 )
         };
 
-        this.offset = this.section.offsetTop - (this.viewport.h / 2);
+        this.offset = this.section.offsetTop - ( this.viewport.h / 2 );
         this.top = this.section.offsetTop - 50;
         this.height = this.section.offsetHeight;
         this.offsetEnd = this.offset + this.height;
@@ -59,13 +59,13 @@ export default class ViewportNotifier {
      */
     listen() {
 
-        events.register('scroll', function(pos) {
-            this.findView(pos);
-        }.bind(this));
+        events.register( 'scroll', function( pos ) {
+            this.findView( pos );
+        }.bind( this ) );
 
-        window.addEventListener('resize', function() {
+        window.addEventListener( 'resize', function() {
             this.init();
-        }.bind(this));
+        }.bind( this ) );
 
         return this;
 
@@ -88,11 +88,11 @@ export default class ViewportNotifier {
      */
     findView(pos) {
 
-      if (pos > this.offset && pos < this.offsetEnd && this.isInView === false) {
+      if ( pos > this.offset && pos < this.offsetEnd && this.isInView === false ) {
         this.elIsInView()  
       }
 
-      if ((pos < this.offset || pos > this.offsetEnd + (this.height /2)) && this.isInView === true) {
+      if ( ( pos < this.offset || pos > this.offsetEnd + ( this.height /2 ) ) && this.isInView === true ) {
           this.elIsNotInView();
       }
 
@@ -106,19 +106,19 @@ export default class ViewportNotifier {
      */
     elIsInView() {
       
-          events.emit(this.id + '-inview', null, true);
+          events.emit( this.id + '-inview', null, true );
           this.isInView = true; 
          
           return null;
         
     };
 
-    /*
+    /**
      * @return {null}
      */
     elIsNotInView() { 
 
-        events.emit(this.id + '-not-inview', null, false);
+        events.emit( this.id + '-not-inview', null, false );
         this.isInView = false;
 
         return null;
