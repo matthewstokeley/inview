@@ -110,16 +110,13 @@ export default class ViewportNotifier {
           this.isInView = true; 
          
           return null;
-      
-
+        
     };
 
     /*
-     * 
      * @return {null}
      */
     elIsNotInView() { 
-
 
         events.emit(this.id + '-not-inview', null, false);
         this.isInView = false;
