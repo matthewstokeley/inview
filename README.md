@@ -60,7 +60,7 @@ Two events are emitted. @todo wonky payload / event key.
 #{section}-in-view
 ```
 
-When the section enters the viewport, the section `id` plus the string `-in-view` is emitted.
+When the section enters the viewport, the section `id` concatenated with the string `-in-view` is emitted.
 
 ---
 
@@ -69,5 +69,5 @@ When the section enters the viewport, the section `id` plus the string `-in-view
 #{section}-not-inview;
 ```
 
-When the section leaves the viewport, the section `id` plus the string `-not-in-view` is emitted.
+When the section leaves the viewport, the section `id` concatenated with the string `-not-in-view` is emitted.
 
