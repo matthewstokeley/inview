@@ -25,15 +25,15 @@ An object that implements a `pubsub` pattern.
 ...
 
 var notifier = new ViewportNotifier({
-    el: document.querySelector('#footer'),
+    el: document.querySelector( '#footer' ),
     scroller: new ScrollPositionNotifier()
 });
 
-var fn = (res) => { console.log(res) }
+var fn = ( res ) => { console.log( res ) }
 
 // register events
-events.register('footer-in-view', fn);
-events.register('footer-not-in-view', fn);
+events.register( 'footer-in-view', fn );
+events.register( 'footer-not-in-view', fn );
 
 ```
 
