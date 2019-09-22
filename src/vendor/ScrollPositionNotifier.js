@@ -23,7 +23,7 @@ export default class Scroller {
 
   /**
    * @todo debounce or throttle
-   * @return {NULL}
+   * @return {null}
    */
   listen() {
       window.addEventListener( 'scroll', function( e ) {
@@ -38,7 +38,7 @@ export default class Scroller {
 
   /**
    * 
-   * @return {NULL}
+   * @return {null}
    */
   emit() {
     
