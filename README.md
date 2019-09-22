@@ -6,7 +6,7 @@ An IE-friendly alternative to the `InteractionObserverAPI` - receive an event no
 
 ### Dependencies
 
-- `Scroller`
+- `ScrollPositionNotifier`
 
 A simple class for handling `onscroll` events.
 
@@ -26,7 +26,7 @@ An object that implements a `pubsub` pattern.
 
 var notifier = new ViewportNotifier({
     el: document.querySelector('#footer'),
-    scroller: new Scroller()
+    scroller: new ScrollPositionNotifier()
 });
 
 var fn = (res) => { console.log(res) }
@@ -44,12 +44,12 @@ events.register('footer-not-in-view', fn);
 ViewportNotifier
 ```
 
-The constructor accepts an `options` object with two properties, `el` and an instance of the `Scroller` class, which just emits an event on the `window` `onscroll` event and provides the option to include methods for debouncing scroll events. 
+The constructor accepts an `options` object with two properties, `el` and an instance of the `ScrollPositionNotifier` class, which just emits an event on the `window` `onscroll` event and provides the option to include methods for debouncing scroll events. 
 
 
 `el` - an element that requires viewport notification
 
-`scroller` - an instance of the `Scroller` class. 
+`scroller` - an instance of the `ScrollPositionNotifier` class. 
 
 
 ### Event Documentation
