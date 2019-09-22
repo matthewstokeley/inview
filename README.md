@@ -2,7 +2,7 @@
 
 0.0.3
 
-An IE-friendly alternative to the `IntersectionObserverAPI` - receive an event notification if an element enters into the viewport.  `@see` [notes on the Intersection Observer API(https://gist.github.com/matthewstokeley/261c98f7279fc3f0dafa56195be59f7d).
+An IE-friendly alternative to the `IntersectionObserverAPI` - receive an event notification if an element enters into the viewport.  `@link` (notes on the Intersection Observer) API[https://gist.github.com/matthewstokeley/261c98f7279fc3f0dafa56195be59f7d].
 
 ### Dependencies
 
